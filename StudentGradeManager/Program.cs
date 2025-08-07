@@ -1,29 +1,30 @@
-﻿namespace StudentGradeManager;
+﻿using System.Collections.Generic;
+namespace StudentGradeManager;
 
 class Program
 {
     static void Main(string[] args)
     {
         //Initialized correct folder in terminal using git
-        
-        
+
+
         /************************ STEP 2: CREATE CLASSES *************************
-         
+
         Create a class called Student
         Create a property called Name of type string
         Create a property called ID of type int
         Create a property called Grades of type List
         ***Be sure to initialize the list
-        
+
         ************************ STEP 3: CREATE METHODS **************************
-         
+
         4.  Create a method called AddGrade in the Student class
             The method will accept one parameter.
             It will be of type double.
             Name the parameter grade
             The return type will be void
             In the scope of the method add the grade to your Grades list
-        
+
         5.  Create a method called AddGrade in the Student class
             The method will accept a parameter of type double[]
             Use the params keyword
@@ -32,62 +33,62 @@ class Program
             In the scope of the method add the grades to your Grades list using this code:
             Grades.AddRange(grades);
             Stage and Commit your work.
-       
+
         6.  Create a method called CalculateAverageGrade in the Student class
             The method will accept no parameters
             The return type will be a double.
             In the scope of the method, calculate a student’s grade average (use the Grades list).
             If there are no grades in the Grades list, the method should return 0.
             Stage and Commit your work.
-            
-        
+
+
            ************************** STEP 4: Create a List *****************************
-         
+
            In the main method, create a List of type Student.
            Name it students
            */
-            
-            var students = new List<Student>();
-           
-           
-           /************************ STEP 5: Create Instances **************************
-           In the main method, create 4 instances (also called objects) of type Student.
-           Each instance represents a student.
-           You may use one or all of the following types of syntax to create your instances:
-           Dot notation
-           Object initializer syntax
-           Custom constructor */
-           
-            // DOT NOTATION:
-           Student student1 = new Student() ;
-           student1.Name = "Bryant";
-           student1.ID = 01234;
-           
-           // OBJECT INITIALIZER SYNTAX:
-           Student student2 =  new Student() {Name = "Devin", ID = 11234};
-           
-           // DOT NOTATTION:
-           Student student3 =  new Student();
-           student3.Name = "Devonte";
-           student3.ID = 21234;
-           
-           // OBJECT INITIALIZER:
-           Student student4 =  new Student() {Name = "Bryson",  ID = 031694};
-           
-        
-           /*********************** STEP 6: Populate the List **************************
-           Populate the list with your instances.
-           Stage and Commit your work. */
 
-           students.AddRange(student1, student2, student3, student4);
-           
-        
-           /************************ STEP 7: Call Methods *******************************
-           Call the AddGrade() method twice for each instance (or student) you create.
-           Be sure to invoke the overloads.
-           Examples:
-           student1.AddGrade(94.3);
-           student1.AddGrade(90.0, 78.9, 95.4); */
+        var students = new List<Student>();
+
+
+        /************************ STEP 5: Create Instances **************************
+        In the main method, create 4 instances (also called objects) of type Student.
+        Each instance represents a student.
+        You may use one or all of the following types of syntax to create your instances:
+        Dot notation
+        Object initializer syntax
+        Custom constructor */
+
+        // DOT NOTATION:
+        Student student1 = new Student();
+        student1.Name = "Bryant";
+        student1.ID = 01234;
+
+        // OBJECT INITIALIZER SYNTAX:
+        Student student2 = new Student() { Name = "Devin", ID = 11234 };
+
+        // DOT NOTATTION:
+        Student student3 = new Student();
+        student3.Name = "Devonte";
+        student3.ID = 21234;
+
+        // OBJECT INITIALIZER:
+        Student student4 = new Student() { Name = "Bryson", ID = 031694 };
+
+
+        /*********************** STEP 6: Populate the List **************************
+        Populate the list with your instances.
+        Stage and Commit your work. */
+
+        students.AddRange(new[] { student1, student2, student3, student4 });
+
+
+    /************************ STEP 7: Call Methods *******************************
+    Call the AddGrade() method twice for each instance (or student) you create.
+    Be sure to invoke the overloads.
+    Examples:
+    student1.AddGrade(94.3);
+    student1.AddGrade(90.0, 78.9, 95.4); */
            student1.AddGrade(99);
            student1.AddGrade(98.8, 94.8, 99);
            
@@ -114,33 +115,47 @@ class Program
             Console.Write("Grades: ");
             foreach (double grade in student.Grades)
             {
-                Console.Write($"{grade} ");
+                Console.Write($"{grade}, ");
             }
-            Console.WriteLine();
 
             Console.WriteLine($"Average Grade: {student.CalculateAverageGrade():F2}");
             Console.WriteLine(); 
         }
         
-           
            /************************ STEP 9: Push your work to Github *********************
            Remember the git workflow to do this!
-           Note: You may need to reference a previous lesson to help you.
+           Note: You may need to reference a previous lesson to help you. */
            
-           BONUS: Course Information
-           Create a class called Course
-           The class will contain the following properties:
-           CourseName of type string
-           CourseCode of type string
-           The class will contain the following field:
-           EnrolledStudents of type List
-           Create a default constructor and initialize the list in its scope.
-           Create a method to enroll students in a course.
-           Your method logic should make sure there are no duplicate student enrollments in a course.
-           Create a course and set the values of the properties.
-           Add at least two students to the course.
-           Display the course information and the students that are enrolled in it.
-            */
-        Console.WriteLine("Hello, World!");
+           /*BONUS: Course Information
+            Create a course and set the values of the properties.
+            Add at least two students to the course.
+            Display the course information and the students that are enrolled in it.*/
+
+           // Create course
+           Course course = new Course();
+           course.courseName = "Introduction to Programming";
+           course.courseCode = "CS101";
+           
+           // Create Students
+           Student s1 = new Student();
+           s1.Name = "Bryzen";
+           s1.Grades.AddRange(new double[] { 85, 90, 95 });
+
+           Student s2 = new Student();
+           s2.Name = "Breece";
+           s2.Grades.AddRange(new double[] { 78, 82, 88 });
+           
+           course.EnrollStudent(s1);
+           course.EnrollStudent(s2);
+           
+           // Enroll students
+           foreach (Student student in students)
+           {
+               course.EnrollStudent(student);
+           }
+           // Try enrolling duplicate, this should print a message and skip it
+           
+           // Display course info
+           course.DisplayCourseInfo();
     }
 }

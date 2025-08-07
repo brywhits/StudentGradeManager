@@ -2,8 +2,8 @@ namespace StudentGradeManager;
 
 public class Student
 {
-    public string Name { get; set; }
-    public int ID { get; set; }
+    public string Name { get; set; } 
+    public double ID { get; set; }
     public List<double> Grades { get; set; } =  new List<double>();
 
     public void AddGrade(double grade)

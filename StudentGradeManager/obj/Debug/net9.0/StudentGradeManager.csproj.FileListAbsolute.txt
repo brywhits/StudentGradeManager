@@ -7,6 +7,7 @@
 /Users/bryantwhitsett/Desktop/repos/StudentGradeManager/StudentGradeManager/obj/Debug/net9.0/StudentGradeManager.AssemblyInfoInputs.cache
 /Users/bryantwhitsett/Desktop/repos/StudentGradeManager/StudentGradeManager/obj/Debug/net9.0/StudentGradeManager.AssemblyInfo.cs
 /Users/bryantwhitsett/Desktop/repos/StudentGradeManager/StudentGradeManager/obj/Debug/net9.0/StudentGradeManager.csproj.CoreCompileInputs.cache
+/Users/bryantwhitsett/Desktop/repos/StudentGradeManager/StudentGradeManager/obj/Debug/net9.0/StudentGradeManager.sourcelink.json
 /Users/bryantwhitsett/Desktop/repos/StudentGradeManager/StudentGradeManager/obj/Debug/net9.0/StudentGradeManager.dll
 /Users/bryantwhitsett/Desktop/repos/StudentGradeManager/StudentGradeManager/obj/Debug/net9.0/refint/StudentGradeManager.dll
 /Users/bryantwhitsett/Desktop/repos/StudentGradeManager/StudentGradeManager/obj/Debug/net9.0/StudentGradeManager.pdb
