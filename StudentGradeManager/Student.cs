@@ -4,16 +4,25 @@ public class Student
 {
     public string Name { get; set; }
     public int ID { get; set; }
-    public List<int> Grades { get; set; } =  new List<int>();
+    public List<double> Grades { get; set; } =  new List<double>();
 
-    public static void AddGrade(double grade)
-    {
+    public void AddGrade(double grade)
+    { 
         Grades.Add(grade);
     }
 
-    public static void AddGrade(double[] grades)
+    public void AddGrade(params double[] grades)
     {
         Grades.AddRange(grades);
+    }
+
+    public double CalculateAverageGrade()
+    {
+        if (Grades.Count == 0)
+        {
+            return 0;
+        }
+        return Grades.Average();
     }
 
 }
