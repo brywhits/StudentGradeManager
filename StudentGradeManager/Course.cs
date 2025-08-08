@@ -36,7 +36,11 @@ public class Course
         Console.WriteLine("Enrolled Students:");
         foreach (var s in EnrolledStudents)
         {
-            Console.WriteLine($" - {s.Name}, Grades: {string.Join(", ", s.Grades)}, Avg: {s.CalculateAverageGrade():F2}");
+            Console.WriteLine(
+                $"- Student ID: {s.ID}; " +
+                $"Name: {s.Name}; " +
+                $"Grades: {string.Join(", ", s.Grades)}; " +
+                $"Grade Avg: {s.CalculateAverageGrade():F2}");
         }
     }
 }

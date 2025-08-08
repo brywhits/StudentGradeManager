@@ -139,10 +139,12 @@ class Program
            // Create Students
            Student s1 = new Student();
            s1.Name = "Bryzen";
+           s1.ID = 8888;
            s1.Grades.AddRange(new double[] { 85, 90, 95 });
 
            Student s2 = new Student();
            s2.Name = "Breece";
+           s2.ID = 7777;
            s2.Grades.AddRange(new double[] { 78, 82, 88 });
            
            course.EnrollStudent(s1);
